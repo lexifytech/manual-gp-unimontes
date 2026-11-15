@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/basePath";
+
 export function ExternalLink({
   href,
   children,
@@ -5,9 +7,11 @@ export function ExternalLink({
   href: string;
   children: React.ReactNode;
 }) {
+  const resolved = withBasePath(href);
+
   return (
     <a
-      href={href}
+      href={resolved}
       target="_blank"
       rel="noopener noreferrer"
       className="text-uni-link underline font-medium hover:text-uni-green"

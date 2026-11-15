@@ -21,9 +21,15 @@ A pasta `out/` pode ser publicada em **GitHub Pages**, Netlify ou Vercel (modo e
 
 ### GitHub Pages
 
-1. Em `next.config.ts` já está `output: "export"`.
-2. Se o repositório for publicado em subpath (`usuario.github.io/repo`), defina `basePath` e `assetPrefix` no `next.config.ts`.
-3. Faça upload do conteúdo de `out/` ou configure CI para gerar no push.
+O repositório [`lexifytech/manual-gp-unimontes`](https://github.com/lexifytech/manual-gp-unimontes) publica em:
+
+**https://lexifytech.github.io/manual-gp-unimontes/**
+
+1. **Settings → Pages → Build and deployment:** origem **GitHub Actions**.
+2. A cada push na branch `main`, o workflow `.github/workflows/deploy-pages.yml` roda `npm run build` com `GITHUB_PAGES=true` (define `basePath` `/manual-gp-unimontes`).
+3. Teste local igual ao CI: `npm run build:pages` e sirva a pasta `out/` com um servidor estático.
+
+Arquivo `public/.nojekyll` evita que o Jekyll do Pages ignore a pasta `_next/`.
 
 ## Atualizar conteúdo
 

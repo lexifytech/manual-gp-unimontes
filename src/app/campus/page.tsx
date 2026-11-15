@@ -11,6 +11,7 @@ import {
   ruManualGP,
   ruManualOportunidades,
 } from "@/content/manualMeta";
+import { withBasePath } from "@/lib/basePath";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Campus");
@@ -40,7 +41,7 @@ export default function CampusPage() {
 
       <p className="not-prose mb-6">
         <a
-          href="/maps/mapa-campus.pdf"
+          href={withBasePath("/maps/mapa-campus.pdf")}
           className="text-uni-link font-semibold underline"
           target="_blank"
           rel="noopener noreferrer"
