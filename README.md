@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manual acadêmico — Gestão Pública (Unimontes)
 
-## Getting Started
+Site estático de orientação para acadêmicos do curso de **Tecnologia em Gestão Pública** da Universidade Estadual de Montes Claros. Conteúdo curado a partir dos manuais em `docs/` e links institucionais oficiais.
 
-First, run the development server:
+## Desenvolvimento
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build (publicação estática)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+A pasta `out/` pode ser publicada em **GitHub Pages**, Netlify ou Vercel (modo estático).
 
-To learn more about Next.js, take a look at the following resources:
+### GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Em `next.config.ts` já está `output: "export"`.
+2. Se o repositório for publicado em subpath (`usuario.github.io/repo`), defina `basePath` e `assetPrefix` no `next.config.ts`.
+3. Faça upload do conteúdo de `out/` ou configure CI para gerar no push.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Atualizar conteúdo
 
-## Deploy on Vercel
+1. Revise os DOCX em `docs/`.
+2. Execute `node scripts/ingest-docs.mjs` para pré-visualizar texto bruto.
+3. Atualize os arquivos tipados em `src/content/*.ts` (fonte da verdade no site).
+4. Rode `npm run build` e confira páginas críticas (`/oportunidades/`, `/contatos/`, `/campus/`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estrutura
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/content/` — dados do manual (matriz, contatos, oportunidades, docentes)
+- `public/maps/` — mapas do campus
+- `public/research/` — gráficos da pesquisa com acadêmicos
+- `public/docs/ppc-gestao-publica-2022.pdf` — PPC
+
+## Aviso legal
+
+Este projeto acadêmico **não substitui** editais, regulamentos ou comunicados oficiais da Unimontes. Confirme informações mutáveis (horários, valores, bolsas) no portal antes de tomar decisões.

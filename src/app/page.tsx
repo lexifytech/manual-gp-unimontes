@@ -1,103 +1,109 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Card } from "@/components/ui/Card";
+import { ContactChip } from "@/components/ui/ContactChip";
+import { quickLinks } from "@/lib/navigation";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="max-w-6xl mx-auto px-4 py-10">
+      <section className="rounded-2xl bg-uni-green text-white p-8 md:p-10 shadow-lg mb-10">
+        <p className="text-uni-gold font-semibold text-sm uppercase tracking-wide">
+          Tecnologia em Gestão Pública · UNIMONTES
+        </p>
+        <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
+          Manual de orientação acadêmica
+        </h1>
+        <p className="text-white/90 max-w-2xl text-lg leading-relaxed">
+          Caminhos práticos para pesquisa, ensino, extensão, serviços e vida no campus — com
+          setores responsáveis, contatos e links oficiais. Conteúdo baseado nos manuais do curso e
+          fontes institucionais (referência nov/2026).
+        </p>
+        <div className="flex flex-wrap gap-3 mt-6">
+          <ContactChip type="phone" value="(38) 3229-8265" label="Coordenação" />
+          <ContactChip type="email" value="curso.gestaopublica@unimontes.br" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-xl font-bold text-uni-green-dark mb-4">Acesso rápido</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {quickLinks.map((q) =>
+            q.href.startsWith("http") ? (
+              <a
+                key={q.href}
+                href={q.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-uni-border bg-white p-4 hover:border-uni-green text-uni-green-dark font-semibold text-sm"
+              >
+                {q.label} ↗
+              </a>
+            ) : (
+              <Link
+                key={q.href}
+                href={q.href}
+                className="rounded-xl border border-uni-border bg-white p-4 hover:border-uni-green text-uni-green-dark font-semibold text-sm"
+              >
+                {q.label}
+              </Link>
+            ),
+          )}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-xl font-bold text-uni-green-dark mb-4">Explore o manual</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Card href="/oportunidades/" title="Oportunidades" description="Editais, bolsas, monitoria, PEAES e extensão." icon="📋" />
+          <Card href="/caminhos/" title="Qual setor procurar?" description="Mapa de decisão: começo por onde e o que perguntar." icon="🧭" />
+          <Card href="/campus/" title="Campus e mapas" description="Prédios, CCSA, biblioteca, RU e deslocamento." icon="🗺️" />
+          <Card href="/matriz/" title="Matriz curricular" description="Disciplinas por período, EAD e carga horária." icon="📚" />
+          <Card href="/pesquisa/" title="Pesquisa" description="GEPAD, iniciação científica e eventos." icon="🔬" />
+          <Card href="/primeiros-30-dias/" title="Primeiros 30 dias" description="Checklist para ingressantes." icon="✅" />
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-xl font-bold text-uni-green-dark mb-2">Por que este manual?</h2>
+        <p className="text-uni-muted text-sm mb-6 max-w-3xl">
+          Pesquisa com 27 acadêmicos do curso (2026) indicou dificuldade em encontrar informações
+          sobre oportunidades, estrutura do campus e serviços. Os gráficos abaixo sintetizam os
+          resultados — sem identificar respondentes.
+        </p>
+        <div className="grid md:grid-cols-2 gap-4 mb-4">
+          {["WhatsApp-Image-2026-11-13-at-18.35.27-(1).jpeg", "WhatsApp-Image-2026-11-13-at-18.35.26.jpeg"].map(
+            (file) => (
+              <figure key={file} className="rounded-lg border border-uni-border bg-white p-3">
+                <Image
+                  src={`/research/${file}`}
+                  alt="Gráfico de pesquisa com acadêmicos sobre acesso à informação na universidade"
+                  width={800}
+                  height={500}
+                  className="w-full h-auto rounded"
+                />
+              </figure>
+            ),
+          )}
+        </div>
+        <Link
+          href="/diagnostico/"
+          className="inline-block text-uni-link font-semibold underline"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Ver todos os gráficos e o diagnóstico do projeto
+        </Link>
+      </section>
+
+      <p className="text-sm text-uni-muted border-t border-uni-border pt-6">
+        Projeto de intervenção sob orientação da Profa. June Marize Castro Silva.{" "}
+        <Link href="/sobre/" className="underline text-uni-link">
+          Sobre o manual
+        </Link>
+        {" · "}
+        <Link href="/fontes/" className="underline text-uni-link">
+          Fontes oficiais
+        </Link>
+      </p>
+    </main>
   );
 }

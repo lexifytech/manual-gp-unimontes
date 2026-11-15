@@ -1,0 +1,28 @@
+import Link from "next/link";
+
+export function Card({
+  href,
+  title,
+  description,
+  icon,
+}: {
+  href: string;
+  title: string;
+  description: string;
+  icon?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="block rounded-xl border border-uni-border bg-white p-5 shadow-sm hover:border-uni-green hover:shadow-md transition-shadow"
+    >
+      {icon && (
+        <span className="text-2xl mb-2 block" aria-hidden>
+          {icon}
+        </span>
+      )}
+      <h2 className="font-bold text-uni-green-dark text-lg">{title}</h2>
+      <p className="text-sm text-uni-muted mt-1 leading-relaxed">{description}</p>
+    </Link>
+  );
+}

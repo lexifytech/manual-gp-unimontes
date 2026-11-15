@@ -1,0 +1,108 @@
+import type { CurriculumPeriod } from "./types";
+
+export const curriculumPeriods: CurriculumPeriod[] = [
+  {
+    period: 1,
+    disciplines: [
+      { name: "Contabilometria Aplicada à Gestão Pública", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Estado, Governo e Política Pública", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Fundamentos de Economia", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Introdução ao Direito", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Modelos Teóricos da Administração Pública", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Introdução à Contabilidade", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Comportamento Organizacional no Setor Público", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      {
+        name: "Métodos Científicos em Gestão Pública I",
+        theoretical: 36,
+        practical: 0,
+        weeklyClasses: 2,
+        hours: 36,
+        clockHours: 30,
+        note: "EAD — CEAD",
+      },
+    ],
+    subtotal: { theoretical: 396, practical: 0 },
+  },
+  {
+    period: 2,
+    disciplines: [
+      { name: "Indicadores Socioeconômicos na Gestão Pública", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Contabilidade Aplicada ao Setor Público", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Economia Brasileira", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Direito Administrativo", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Planejamento Estratégico e Governamental", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Gestão de Pessoas no Setor Público", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      {
+        name: "Métodos Científicos em Gestão Pública II",
+        theoretical: 36,
+        practical: 0,
+        weeklyClasses: 2,
+        hours: 36,
+        clockHours: 30,
+        note: "EAD — CEAD",
+      },
+      { name: "Libras", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30, note: "Optativa" },
+    ],
+  },
+  {
+    period: 3,
+    disciplines: [
+      { name: "Gestão de Materiais e Patrimônio Público", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Execução Orçamentária e Fiscal", theoretical: 72, practical: 0, weeklyClasses: 2, hours: 72, clockHours: 60 },
+      { name: "Gestão de Programas e Projetos Públicos", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Direito Tributário", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Controladoria e Auditoria Governamental", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Contratos e Convênios no Setor Público", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Gestão de Serviços de Saúde", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Política Pública e Educação", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      {
+        name: "Projeto de Intervenção I",
+        theoretical: 0,
+        practical: 36,
+        weeklyClasses: 2,
+        hours: 36,
+        clockHours: 30,
+        note: "EAD — TCC",
+      },
+      {
+        name: "Marketing Público e Político",
+        theoretical: 36,
+        practical: 0,
+        weeklyClasses: 2,
+        hours: 36,
+        clockHours: 30,
+        note: "EAD — optativa",
+      },
+    ],
+    subtotal: { theoretical: 396, practical: 36 },
+  },
+  {
+    period: 4,
+    disciplines: [
+      { name: "Gestão de Políticas Públicas: Saúde e Bem-Estar", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Administração Pública Municipal", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Democracia e Controle Social", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      { name: "Gestão de Políticas Públicas: Mercado de Trabalho e Renda", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Avaliação e Monitoramento de Políticas Públicas", theoretical: 72, practical: 0, weeklyClasses: 4, hours: 72, clockHours: 60 },
+      { name: "Governo Digital", theoretical: 36, practical: 0, weeklyClasses: 2, hours: 36, clockHours: 30 },
+      {
+        name: "Projeto de Intervenção II",
+        theoretical: 0,
+        practical: 36,
+        weeklyClasses: 2,
+        hours: 36,
+        clockHours: 30,
+        note: "EAD — TCC",
+      },
+    ],
+    subtotal: { theoretical: 360, practical: 36 },
+  },
+];
+
+export const workloadSummary = {
+  theoretical: 1584,
+  practical: 72,
+  aacc: 100,
+  aiex: 195,
+  total: 1951,
+};

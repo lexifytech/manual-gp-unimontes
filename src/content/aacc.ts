@@ -1,0 +1,27 @@
+import type { AaccActivity } from "./types";
+
+export const aaccActivities: AaccActivity[] = [
+  { code: "01", activity: "Estágio interno (extracurricular) na instituição, relacionado ao curso", limit: "Carga horária cumulativa até o limite" },
+  { code: "02", activity: "Estágio extracurricular fora da instituição, em atividades relacionadas ao curso", limit: "Carga horária cumulativa até o limite" },
+  { code: "03", activity: "Atividades de monitoria/tutoria", limit: "Até 10 h por semestre" },
+  { code: "04", activity: "Participação em atividades de iniciação científica", limit: "Até 10 h por semestre" },
+  { code: "05", activity: "Produção acadêmico-científica e cultural (resumos simples)", limit: "10 h por trabalho" },
+  { code: "06", activity: "Artigo científico em periódico indexado (nível A)", limit: "15 h por trabalho" },
+  { code: "07", activity: "Artigo científico em periódico indexado (nível B)", limit: "25 h por trabalho" },
+  { code: "08", activity: "Artigo científico em periódico indexado (nível C)", limit: "50 h por trabalho" },
+  { code: "09", activity: "Participação em grupos de pesquisa institucionalizados", limit: "Até 10 h por semestre" },
+  { code: "10", activity: "Cursos de extensão e aperfeiçoamento em IES reconhecida pelo MEC", limit: "Carga horária cumulativa até o limite" },
+  { code: "11", activity: "Projetos de extensão comunitária", limit: "Até 20 h por semestre" },
+  { code: "12", activity: "Instrutor de curso de extensão relacionado à formação", limit: "Até 10 h por curso" },
+  { code: "13", activity: "Organização de eventos científico-culturais", limit: "Até 10 h por evento" },
+  { code: "14", activity: "Cursos técnico-profissionalizantes relacionados ao curso", limit: "Carga horária cumulativa até o limite" },
+  { code: "15", activity: "Cursos livres (idiomas, informática, Libras etc.)", limit: "Carga horária cumulativa até o limite" },
+  { code: "16", activity: "Eventos, encontros, jornadas, seminários e workshops", limit: "Carga horária cumulativa até o limite" },
+  { code: "17", activity: "Componente curricular eletivo em outra IES reconhecida", limit: "Carga horária cumulativa até o limite" },
+  { code: "18", activity: "Competições regionais, nacionais e internacionais", limit: "Até 10 h por evento" },
+  { code: "19", activity: "Voluntariado devidamente comprovado", limit: "Até 10 h por atividade" },
+  { code: "20", activity: "Premiação em concurso acadêmico relacionado ao curso", limit: "20 h por prêmio" },
+  { code: "21", activity: "Participação em palestra relacionada às disciplinas", limit: "Carga horária cumulativa até o limite" },
+  { code: "22", activity: "Atividade de cunho cultural/científico", limit: "Até 10 h por atividade" },
+  { code: "23", activity: "Participação em processos eleitorais", limit: "Até 10 h por atividade" },
+];
