@@ -19,7 +19,10 @@ export const officialSources: OfficialSource[] = [
   { label: "CEAD — AVA", href: "https://www.cead.unimontes.br/ava/login/index.php" },
   { label: "Normas de Graduação (PDF)", href: "https://unimontes.br/wp-content/uploads/2018/12/Normas_Para_Regulamentao_do_Ensino__04-12-2018.pdf" },
   { label: "Resoluções CEPEX", href: "https://unimontes.br/resolucoes_cepex/" },
-  { label: "PPC Gestão Pública (PDF aprovado 2022)", href: "/docs/ppc-gestao-publica-2022.pdf" },
+  {
+    label: "Projeto Pedagógico do Curso — PDF aprovado 2022 (cópia para consulta)",
+    href: "/docs/ppc-gestao-publica-2022.pdf",
+  },
 ];
 
 export const emailTemplates = {

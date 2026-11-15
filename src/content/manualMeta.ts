@@ -18,7 +18,7 @@ export const cursoIdentificacao = {
   profile:
     "O curso de Tecnologia em Gestão Pública é presencial, tem duração indicada de quatro semestres e está vinculado ao Centro de Ciências Sociais Aplicadas (CCSA), no campus-sede. A página oficial apresenta 35 vagas semestrais e informa como endereço acadêmico o CCSA. O curso tem perfil voltado à formação para planejamento, implantação e gerenciamento de programas e projetos de políticas públicas.",
   vagasNota:
-    "35 vagas semestrais conforme página oficial citada no levantamento de 13/11/2026. Confirme oferta e turno no portal ou na coordenação.",
+    "35 vagas semestrais conforme página oficial do curso (consulta 13/11/2026). Confirme oferta e turno no portal ou na coordenação.",
 };
 
 export type ContactUnit = {

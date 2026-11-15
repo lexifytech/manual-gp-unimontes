@@ -1,6 +1,7 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { iniciacaoModalidades } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Pesquisa");
@@ -11,7 +12,7 @@ export default function PesquisaPage() {
     <PageShell
       title="Pesquisa"
       lead="Iniciação científica, grupos, inovação e divulgação científica."
-      source="Manual_Acesso_Oportunidades; gepad.unimontes.br"
+      source={PAGE_SOURCES.pesquisa}
       sourceDate="13/11/2026"
     >
       <h2>Pró-Reitoria de Pesquisa (PRP)</h2>
@@ -20,7 +21,7 @@ export default function PesquisaPage() {
         5, 2º andar (confirmar atendimento).
       </p>
 
-      <h2>Iniciação científica — modalidades (manual §3.1)</h2>
+      <h2>Iniciação científica — modalidades</h2>
       <p>{mod.intro}</p>
       <ul>
         <li>{mod.icv}</li>

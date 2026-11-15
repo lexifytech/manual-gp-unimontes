@@ -4,6 +4,7 @@ import { ContactChip } from "@/components/ui/ContactChip";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import Link from "next/link";
 import { contactUnits, cursoIdentificacao, portalSteps } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("O Curso");
@@ -13,7 +14,7 @@ export default function CursoPage() {
     <PageShell
       title="Tecnologia em Gestão Pública"
       lead="Curso presencial no CCSA, campus-sede de Montes Claros."
-      source="Manual_Gestao_Publica_Unimontes.docx; Manual_Acesso_Oportunidades; Secretaria Geral"
+      source={PAGE_SOURCES.curso}
       sourceDate="nov/2026"
     >
       <h2>Perfil do curso</h2>
@@ -92,13 +93,13 @@ export default function CursoPage() {
       </ol>
       <p>
         <Link href="/sobre/" className="text-uni-link underline">
-          Ouvidoria, redes sociais e limites do levantamento
+          Ouvidoria, redes sociais e limites da compilação
         </Link>
       </p>
 
       <h2>Secretaria do curso</h2>
       <p>
-        Ramal publicado no levantamento de oportunidades: Controle acadêmico CCSA{" "}
+        Ramal publicado na Secretaria Geral / portal: Controle acadêmico CCSA{" "}
         <strong>(38) 3229-8048</strong> (via Secretaria Geral — Gestão Pública).
       </p>
       <p>
@@ -136,8 +137,8 @@ export default function CursoPage() {
           label: "Resoluções CEPEX — calendário vigente",
         }}
       >
-        O manual do curso ainda não traz as datas atualizadas do semestre. Consulte a resolução
-        CEPEx mais recente publicada no portal.
+        Consulte a resolução CEPEx mais recente publicada no portal para calendário e datas do
+        semestre.
       </AlertDisclaimer>
     </PageShell>
   );

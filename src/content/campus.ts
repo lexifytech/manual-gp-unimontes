@@ -38,7 +38,7 @@ export const campusPlaces: CampusPlace[] = [
     phone: "(38) 3229-8212",
     email: "biblioteca.central@unimontes.br",
     note:
-      "Manual do curso cita também (38) 3229-8211 e direção Roseli Aparecida Damaso Messias Garcia — confirme o ramal vigente. Ver passos em /campus/#biblioteca.",
+      "O portal cita também (38) 3229-8211 e a direção Roseli Aparecida Damaso Messias Garcia — confirme o ramal vigente.",
   },
   {
     id: "museu",
@@ -57,11 +57,11 @@ export const campusPlaces: CampusPlace[] = [
     id: "ru",
     name: "Restaurante Universitário",
     building: "Entrada norte do campus",
-    hours: "Almoço 10h30–13h30; jantar 17h30–20h (conforme manual — mutável)",
+    hours: "Almoço 10h30–13h30; jantar 17h30–20h (conforme portal — mutável)",
     phone: "(38) 3229-8454",
     email: "ru@unimontes.br",
     note:
-      "Manual de oportunidades: R$ 2,50/refeição (consulta 13/11/2026). Manual do curso: marmita alumínio R$ 2,50; isopor R$ 3,00. Cadastro: RG com foto e comprovante de matrícula (carimbado pela Secretaria Geral, conforme manual do curso). Confirmar no portal.",
+      "Portal Unimontes: R$ 2,50/refeição (consulta 13/11/2026). Marmita alumínio R$ 2,50; isopor R$ 3,00 em outra publicação institucional. Cadastro: RG com foto e comprovante de matrícula (carimbado pela Secretaria Geral). Confirmar no portal.",
   },
   {
     id: "ceu",

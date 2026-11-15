@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import {
@@ -10,6 +11,7 @@ import {
   presentationOportunidades,
   redesSociaisAviso,
 } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Sobre o manual");
@@ -18,15 +20,21 @@ export default function SobrePage() {
   return (
     <PageShell
       title="Sobre este manual"
-      lead="Apresentação, modo de uso, canais institucionais e limites do levantamento."
-      source="Manual_Acesso_Oportunidades; Manual_Gestao_Publica_Unimontes"
+      lead="Apresentação, modo de uso, canais institucionais e limites da compilação."
+      source={PAGE_SOURCES.sobre}
       sourceDate="13/11/2026"
     >
       <h2>Origem</h2>
       <p>{introducaoManualGP}</p>
       <p>
-        O levantamento ampliado de oportunidades e serviços consta no arquivo{" "}
-        <em>Manual_Acesso_Oportunidades_Unimontes_Gestao_Publica.docx</em> (referência 13/11/2026).
+        O mapa de oportunidades e serviços foi elaborado a partir do portal institucional, editais
+        publicados e páginas dos setores responsáveis (referência 13/11/2026). Confira a lista de
+        links em{" "}
+        <ExternalLink href="https://unimontes.br/">unimontes.br</ExternalLink> e na página{" "}
+        <Link href="/fontes/" className="text-uni-link underline">
+          Fontes
+        </Link>
+        .
       </p>
 
       <h2>Apresentação</h2>
@@ -60,7 +68,7 @@ export default function SobrePage() {
       <h2>Redes sociais</h2>
       <p>{redesSociaisAviso}</p>
 
-      <h2>Limites do levantamento</h2>
+      <h2>Limites da compilação</h2>
       <ul>
         {limitesLevantamento.map((item) => (
           <li key={item}>{item}</li>

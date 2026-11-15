@@ -16,8 +16,8 @@ export default function HomePage() {
         </h1>
         <p className="text-white/90 max-w-2xl text-lg leading-relaxed">
           Caminhos práticos para pesquisa, ensino, extensão, serviços e vida no campus — com
-          setores responsáveis, contatos e links oficiais. Conteúdo baseado nos manuais do curso e
-          fontes institucionais (referência nov/2026).
+          setores responsáveis, contatos e links oficiais. Conteúdo baseado no portal Unimontes,
+          editais e páginas dos setores (referência nov/2026).
         </p>
         <div className="flex flex-wrap gap-3 mt-6">
           <ContactChip type="phone" value="(38) 3229-8265" label="Coordenação" />

@@ -6,6 +6,7 @@ import {
   prexPropostaDocumentos,
   prexPropostaPassos,
 } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Extensão");
@@ -15,7 +16,7 @@ export default function ExtensaoPage() {
     <PageShell
       title="Extensão"
       lead="Participar de ações existentes ou propor projetos com tramitação institucional."
-      source="Manual_Acesso_Oportunidades"
+      source={PAGE_SOURCES.extensao}
       sourceDate="13/11/2026"
     >
       <h2>Onde procurar</h2>
@@ -51,7 +52,7 @@ export default function ExtensaoPage() {
         <li>Inscreva-se no canal indicado; acompanhe resultado, recurso e convocação.</li>
       </ol>
 
-      <h2>Propor ação própria (manual §4.3)</h2>
+      <h2>Propor ação própria</h2>
       <p>
         A PREX publica documentos para encaminhamento de ações de extensão, incluindo memorando via
         SEI, ata de aprovação departamental, declaração sobre financiamento/despesas, formulário de
@@ -59,7 +60,7 @@ export default function ExtensaoPage() {
         Manual de Extensão, modelo de ação e modelos de relatório. Não basta realizar atividade em
         nome da Universidade sem autorização.
       </p>
-      <p className="font-medium">Documentos citados no manual:</p>
+      <p className="font-medium">Documentos exigidos no encaminhamento (PREX):</p>
       <ul>
         {prexPropostaDocumentos.map((d) => (
           <li key={d}>{d}</li>
@@ -71,7 +72,7 @@ export default function ExtensaoPage() {
         ))}
       </ol>
 
-      <h2>Temas compatíveis com Gestão Pública (manual §4.4)</h2>
+      <h2>Temas compatíveis com Gestão Pública</h2>
       <ul>
         {extensaoTemasGestaoPublica.map((t) => (
           <li key={t}>{t}</li>

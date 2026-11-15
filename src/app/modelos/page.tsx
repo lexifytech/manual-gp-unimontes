@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { emailTemplates } from "@/content/sources";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Modelos de mensagem");
@@ -8,8 +9,8 @@ export default function ModelosPage() {
   return (
     <PageShell
       title="Modelos de mensagem"
-      lead="E-mails institucionais sugeridos no manual de oportunidades."
-      source="Manual_Acesso_Oportunidades §10"
+      lead="Modelos de e-mail para contato com coordenação e serviços."
+      source={PAGE_SOURCES.modelos}
       sourceDate="13/11/2026"
     >
       {Object.entries(emailTemplates).map(([key, tpl]) => (

@@ -2,6 +2,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { curriculumPeriods, workloadSummary } from "@/content/curriculum";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Matriz Curricular");
@@ -11,7 +12,7 @@ export default function MatrizPage() {
     <PageShell
       title="Matriz curricular"
       lead="Organização em quatro períodos. Disciplinas EAD usam o ambiente do CEAD."
-      source="Manual_Gestao_Publica_Unimontes.docx; PPC"
+      source={PAGE_SOURCES.matriz}
       sourceDate="nov/2026"
     >
       <AlertDisclaimer>

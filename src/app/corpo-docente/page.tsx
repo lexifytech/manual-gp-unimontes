@@ -2,6 +2,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { administrationFaculty, courseCoordination } from "@/content/faculty";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Corpo docente");
@@ -11,7 +12,7 @@ export default function CorpoDocentePage() {
     <PageShell
       title="Coordenação e corpo docente"
       lead="Coordenação do curso e docentes do Departamento de Ciências da Administração (fontes oficiais)."
-      source="Manual GP; GEPAD; sites.google.com/unimontes.br/admunimontes"
+      source={PAGE_SOURCES.corpoDocente}
       sourceDate="nov/2026"
     >
       <AlertDisclaimer>

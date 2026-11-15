@@ -12,6 +12,7 @@ import {
   ruManualOportunidades,
 } from "@/content/manualMeta";
 import { withBasePath } from "@/lib/basePath";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Campus");
@@ -21,7 +22,7 @@ export default function CampusPage() {
     <PageShell
       title="Campus e mapas"
       lead="Campus Universitário Professor Darcy Ribeiro — Av. Dr. Rui Braga, s/n, Vila Mauricéia."
-      source="Manual_Acesso_Oportunidades §5; mapa UniOpen"
+      source={PAGE_SOURCES.campus}
       sourceDate="13/11/2026"
       mutable
     >
@@ -78,24 +79,24 @@ export default function CampusPage() {
         ))}
       </ol>
       <p>
-        Manual de oportunidades (consulta 13/11/2026): {bibliotecaContatoOportunidades.phone},{" "}
-        {bibliotecaContatoOportunidades.email}, {bibliotecaContatoOportunidades.building},{" "}
+        Página da Biblioteca no portal (consulta 13/11/2026): {bibliotecaContatoOportunidades.phone}
+        , {bibliotecaContatoOportunidades.email}, {bibliotecaContatoOportunidades.building},{" "}
         {bibliotecaContatoOportunidades.hours}.
       </p>
       <p>
-        Manual do curso: direção {bibliotecaContatoManualGP.director}; telefone publicado{" "}
+        Outro canal institucional: direção {bibliotecaContatoManualGP.director}; telefone publicado{" "}
         {bibliotecaContatoManualGP.phone}; cadastro: {bibliotecaContatoManualGP.cadastro}.
       </p>
       <AlertDisclaimer title="Telefone da biblioteca">
-        Dois ramais aparecem nos manuais ({bibliotecaContatoOportunidades.phone} e{" "}
+        Dois ramais aparecem em fontes do portal ({bibliotecaContatoOportunidades.phone} e{" "}
         {bibliotecaContatoManualGP.phone}). Confirme o contato vigente antes do deslocamento.
       </AlertDisclaimer>
 
-      <h2>Restaurante Universitário — detalhes dos manuais</h2>
+      <h2>Restaurante Universitário — valores e cadastro</h2>
       <p>{ruManualOportunidades.descricao}</p>
       <p>{ruManualOportunidades.valor}</p>
       <p>{ruManualOportunidades.cadastro}</p>
-      <p>Manual do curso: {ruManualGP.marmitas}. {ruManualGP.cadastro}</p>
+      <p>{ruManualGP.marmitas}. {ruManualGP.cadastro}</p>
 
       <h2>Laboratórios, salas e CCH</h2>
       <ul>

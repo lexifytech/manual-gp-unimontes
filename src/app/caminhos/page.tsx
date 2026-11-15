@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { pathRows } from "@/content/paths";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Qual setor procurar?");
@@ -9,7 +10,7 @@ export default function CaminhosPage() {
     <PageShell
       title="Mapa de caminhos"
       lead="Se você quer… comece por… e pergunte…"
-      source="Manual_Acesso_Oportunidades §8"
+      source={PAGE_SOURCES.caminhos}
       sourceDate="13/11/2026"
     >
       <div className="overflow-x-auto not-prose">

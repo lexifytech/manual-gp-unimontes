@@ -4,6 +4,7 @@ import { ExternalLink } from "@/components/ui/ExternalLink";
 import { ContactChip } from "@/components/ui/ContactChip";
 import { aaccActivities } from "@/content/aacc";
 import { naeOrientacoes, peaesNotaEdital, peaesRoteiro } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Vida Acadêmica");
@@ -13,7 +14,7 @@ export default function VidaAcademicaPage() {
     <PageShell
       title="Vida acadêmica"
       lead="AACC, extensão (AIEX), avaliação, sistemas e situações de vínculo."
-      source="Manual_Gestao_Publica_Unimontes.docx"
+      source={PAGE_SOURCES.vidaAcademica}
       sourceDate="nov/2026"
     >
       <h2>WebGiz (WebAluno)</h2>
@@ -47,7 +48,7 @@ export default function VidaAcademicaPage() {
         </table>
       </div>
       <p className="text-sm text-uni-muted mt-2">
-        Descrições com reticências no manual devem ser conferidas no PPC integral.
+        Descrições incompletas nesta página devem ser conferidas no PPC integral.
       </p>
 
       <h2>AIEX — 195 horas</h2>
@@ -74,11 +75,11 @@ export default function VidaAcademicaPage() {
           label: "Normas de Graduação (PDF)",
         }}
       >
-        O manual do curso ainda não incorpora o texto dessas seções. Utilize as Normas de Graduação
-        e orientação da Secretaria Geral.
+        Utilize as Normas de Graduação e a orientação da Secretaria Geral para trancamento,
+        desistência e aproveitamento.
       </AlertDisclaimer>
 
-      <h2>PEAES — Assistência estudantil (manual de oportunidades §6.1)</h2>
+      <h2>PEAES — Assistência estudantil</h2>
       <p>
         O PEAES é divulgado pela Unimontes como política de permanência para estudantes que atendam
         aos critérios socioeconômicos e acadêmicos definidos em edital. Modalidades, valores,
@@ -95,7 +96,7 @@ export default function VidaAcademicaPage() {
         <ContactChip type="email" value="peaes@unimontes.br" />
       </div>
 
-      <h2>NAE — Apoio, saúde e acessibilidade (§6.2)</h2>
+      <h2>NAE — Apoio, saúde e acessibilidade</h2>
       <ul>
         {naeOrientacoes.map((item) => (
           <li key={item}>{item}</li>

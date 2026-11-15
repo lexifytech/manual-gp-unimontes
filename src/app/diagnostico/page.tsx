@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { diagnosticoProjeto, researchImages } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Pesquisa com acadêmicos");
@@ -11,7 +12,7 @@ export default function DiagnosticoPage() {
     <PageShell
       title="Diagnóstico e pesquisa com acadêmicos"
       lead="Levantamento com 27 respondentes (2026) e motivação do projeto de intervenção."
-      source="docs/WhatsApp Image 2026-11-13*.jpeg; DOC-20260628-WA0016..docx"
+      source={PAGE_SOURCES.diagnostico}
       sourceDate="2026"
     >
       <h2>Problema identificado no projeto</h2>
@@ -41,7 +42,7 @@ export default function DiagnosticoPage() {
 
       <p className="mt-6">
         <Link href="/sobre/" className="text-uni-link underline font-medium">
-          Sobre o manual e conclusão do levantamento
+          Sobre este site e limites da compilação
         </Link>
       </p>
     </PageShell>

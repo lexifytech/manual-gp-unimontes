@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { ExternalLink } from "@/components/ui/ExternalLink";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Ensino");
@@ -9,7 +10,7 @@ export default function EnsinoPage() {
     <PageShell
       title="Ensino"
       lead="Monitoria, estágio, intercâmbio e rotina acadêmica."
-      source="Manual_Acesso_Oportunidades_Unimontes_Gestao_Publica.docx"
+      source={PAGE_SOURCES.ensino}
       sourceDate="13/11/2026"
     >
       <h2>Monitoria</h2>

@@ -1,6 +1,7 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { OpportunityCard } from "@/components/ui/OpportunityCard";
 import { opportunities } from "@/content/opportunities";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Oportunidades");
@@ -10,7 +11,7 @@ export default function OportunidadesPage() {
     <PageShell
       title="Oportunidades"
       lead="Chamadas, programas e caminhos para participação discente. Editais vigentes sempre no portal oficial."
-      source="Manual_Acesso_Oportunidades"
+      source={PAGE_SOURCES.oportunidades}
       sourceDate="13/11/2026"
       mutable
     >

@@ -4,6 +4,7 @@ import { ContactChip } from "@/components/ui/ContactChip";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { campusPlaces } from "@/content/campus";
 import { contactUnits } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Contatos");
@@ -17,11 +18,11 @@ export default function ContatosPage() {
     <PageShell
       title="Contatos"
       lead="Coordenação, secretaria, departamento e apoio estudantil."
-      source="Secretaria Geral; Catálogo Telefônico; Manual Gestão Pública"
+      source={PAGE_SOURCES.contatos}
       sourceDate="nov/2026"
       mutable
     >
-      <h2>Unidades do manual (§1.1)</h2>
+      <h2>Unidades e contatos institucionais</h2>
       <div className="overflow-x-auto not-prose mb-6">
         <table className="w-full text-sm border border-uni-border">
           <thead className="bg-uni-bg">

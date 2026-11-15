@@ -2,6 +2,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { officialSources } from "@/content/sources";
 import { limitesLevantamento } from "@/content/manualMeta";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 const fontesManualOportunidades = [
@@ -34,7 +35,8 @@ export default function FontesPage() {
   return (
     <PageShell
       title="Fontes consultadas"
-      lead="Links primários para conferência e atualização. Data de levantamento do manual de oportunidades: 13/11/2026."
+      lead="Links primários para conferência e atualização. Referência da compilação: 13/11/2026."
+      source={PAGE_SOURCES.fontes}
       sourceDate="13/11/2026"
     >
       <ul className="space-y-2">
@@ -48,10 +50,9 @@ export default function FontesPage() {
           </li>
         ))}
       </ul>
-      <h2>Referências do levantamento (manual §11)</h2>
+      <h2>Outras páginas e setores consultados</h2>
       <p className="text-sm text-uni-muted">
-        Lista reproduzida do manual de oportunidades. Use os links acima ou o portal para a URL
-        vigente de cada item.
+        Itens verificados no portal institucional. Use os links acima para a URL vigente de cada um.
       </p>
       <ul>
         {fontesManualOportunidades.map((item) => (
@@ -59,20 +60,13 @@ export default function FontesPage() {
         ))}
       </ul>
 
-      <h2>Limites do levantamento (manual §12)</h2>
+      <h2>Limites da compilação</h2>
       <ul>
         {limitesLevantamento.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
 
-      <h2>Documentos locais (docs/)</h2>
-      <ul>
-        <li>Manual_Acesso_Oportunidades_Unimontes_Gestao_Publica.docx</li>
-        <li>Manual_Gestao_Publica_Unimontes.docx</li>
-        <li>PPC Tecnologia em gestão pública — aprovado 2022.pdf</li>
-        <li>Projeto de intervenção (DOC-20260628-WA0016..docx)</li>
-      </ul>
     </PageShell>
   );
 }

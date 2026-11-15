@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { first30Days } from "@/content/paths";
+import { PAGE_SOURCES } from "@/content/pageSources";
 import { pageTitle } from "@/lib/metadata";
 
 export const metadata = pageTitle("Primeiros 30 dias");
@@ -9,7 +10,7 @@ export default function Primeiros30DiasPage() {
     <PageShell
       title="Primeiros 30 dias"
       lead="Checklist prático para ingressantes."
-      source="Manual_Acesso_Oportunidades §9"
+      source={PAGE_SOURCES.primeiros30}
       sourceDate="13/11/2026"
     >
       <ol className="space-y-3">
