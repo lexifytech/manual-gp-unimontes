@@ -1,7 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
-import { withBasePath } from "@/lib/basePath";
 import { Card } from "@/components/ui/Card";
+import {
+  ResearchSurveySection,
+  surveyHighlightIds,
+} from "@/components/research/ResearchSurveySection";
 import { ContactChip } from "@/components/ui/ContactChip";
 import { quickLinks } from "@/lib/navigation";
 
@@ -72,20 +74,8 @@ export default function HomePage() {
           sobre oportunidades, estrutura do campus e serviços. Os gráficos abaixo sintetizam os
           resultados — sem identificar respondentes.
         </p>
-        <div className="grid md:grid-cols-2 gap-4 mb-4">
-          {["WhatsApp-Image-2026-11-13-at-18.35.27-(1).jpeg", "WhatsApp-Image-2026-11-13-at-18.35.26.jpeg"].map(
-            (file) => (
-              <figure key={file} className="rounded-lg border border-uni-border bg-white p-3">
-                <Image
-                  src={withBasePath(`/research/${file}`)}
-                  alt="Gráfico de pesquisa com acadêmicos sobre acesso à informação na universidade"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto rounded"
-                />
-              </figure>
-            ),
-          )}
+        <div className="mb-4">
+          <ResearchSurveySection includeIds={surveyHighlightIds} />
         </div>
         <Link
           href="/diagnostico/"

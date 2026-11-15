@@ -183,16 +183,6 @@ export const ruManualGP = {
     "Cadastro: RG com foto e comprovante de matrícula carimbado pela Secretaria Geral.",
 };
 
-export const researchImages = [
-  "WhatsApp-Image-2026-11-13-at-18.35.27.jpeg",
-  "WhatsApp-Image-2026-11-13-at-18.35.27-(1).jpeg",
-  "WhatsApp-Image-2026-11-13-at-18.35.26.jpeg",
-  "WhatsApp-Image-2026-11-13-at-18.35.27-(2).jpeg",
-  "WhatsApp-Image-2026-11-13-at-18.35.28.jpeg",
-  "WhatsApp-Image-2026-11-13-at-18.35.28-(1).jpeg",
-  "WhatsApp-Image-2026-11-13-at-18.16.39.jpeg",
-];
-
 /** Trecho do diagnóstico (projeto de intervenção, docs/DOC-20260628-WA0016..docx) */
 export const diagnosticoProjeto =
   "Muitos estudantes ingressantes enfrentam dificuldades de adaptação acadêmica e de acesso às informações institucionais essenciais para sua permanência no ensino superior — incluindo dúvidas sobre matrícula, PPC, normas, estágios, extensão, iniciação científica, sistemas institucionais e localização no campus.";
