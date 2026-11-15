@@ -16,7 +16,7 @@ export default function Primeiros30DiasPage() {
       <ol className="space-y-3">
         {first30Days.map((item, i) => (
           <li key={i} className="flex gap-3">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-uni-green text-white font-bold text-sm">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-uni-blue text-white font-bold text-sm">
               {i + 1}
             </span>
             <span className="pt-1">{item}</span>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { ContactChip } from "@/components/ui/ContactChip";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
@@ -26,6 +27,15 @@ export default function CampusPage() {
       sourceDate="13/11/2026"
       mutable
     >
+      <p className="not-prose mb-4">
+        <Link
+          href="/mapa-grafico/"
+          className="text-uni-link font-semibold underline"
+        >
+          Ver mapa gráfico em tela cheia
+        </Link>
+      </p>
+
       <figure className="not-prose mb-8 rounded-xl overflow-hidden border border-uni-border bg-white p-2">
         <Image
           src={withBasePath("/maps/campus-isometric.jpeg")}
@@ -58,7 +68,7 @@ export default function CampusPage() {
             key={place.id}
             className="rounded-lg border border-uni-border bg-white p-4"
           >
-            <h3 className="font-bold text-uni-green-dark">{place.name}</h3>
+            <h3 className="font-bold text-uni-blue-dark">{place.name}</h3>
             {place.building && (
               <p className="text-sm text-uni-muted mt-1">{place.building}</p>
             )}

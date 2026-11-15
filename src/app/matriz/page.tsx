@@ -29,7 +29,7 @@ export default function MatrizPage() {
           <h2>{period.period}º período</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border border-uni-border mb-8">
-              <thead className="bg-uni-green text-white">
+              <thead className="bg-uni-blue text-white">
                 <tr>
                   <th className="p-2 text-left">Disciplina</th>
                   <th className="p-2">T</th>

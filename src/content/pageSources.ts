@@ -17,4 +17,5 @@ export const PAGE_SOURCES = {
   modelos: "Orientações da coordenação e dos setores — Unimontes",
   diagnostico: "Enquete com acadêmicos do curso (2026); projeto de intervenção GP",
   fontes: "Links institucionais listados abaixo",
+  sugestoes: "Projeto de intervenção GP; canal de feedback aos mantenedores do manual",
 } as const;

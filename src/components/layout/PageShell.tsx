@@ -20,7 +20,7 @@ export function PageShell({
   return (
     <main className="max-w-6xl mx-auto px-4 py-8">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-uni-green-dark border-b-4 border-uni-gold pb-2">
+        <h1 className="text-3xl font-bold text-uni-blue-dark border-b-4 border-uni-blue pb-2">
           {title}
         </h1>
         {lead && <p className="mt-3 text-uni-muted text-lg max-w-3xl">{lead}</p>}

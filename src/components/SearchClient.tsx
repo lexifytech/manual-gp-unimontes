@@ -32,7 +32,7 @@ export function SearchClient() {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Ex.: GEPAD, PEAES, Prédio 1, monitoria…"
-        className="w-full rounded-lg border border-uni-border px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-uni-green"
+        className="w-full rounded-lg border border-uni-border px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-uni-blue"
         autoComplete="off"
       />
       <ul className="mt-4 space-y-2">
@@ -40,9 +40,9 @@ export function SearchClient() {
           <li key={r.id}>
             <Link
               href={String(r.href)}
-              className="block rounded-lg border border-uni-border bg-white px-4 py-3 hover:border-uni-green"
+              className="block rounded-lg border border-uni-border bg-white px-4 py-3 hover:border-uni-blue"
             >
-              <span className="font-semibold text-uni-green-dark">{String(r.title)}</span>
+              <span className="font-semibold text-uni-blue-dark">{String(r.title)}</span>
             </Link>
           </li>
         ))}

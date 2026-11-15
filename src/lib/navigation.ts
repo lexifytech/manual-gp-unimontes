@@ -12,9 +12,11 @@ export const mainNav: NavItem[] = [
   { href: "/extensao/", label: "Extensão" },
   { href: "/oportunidades/", label: "Oportunidades" },
   { href: "/caminhos/", label: "Qual setor?" },
+  { href: "/mapa-grafico/", label: "Mapa gráfico" },
   { href: "/campus/", label: "Campus" },
   { href: "/contatos/", label: "Contatos" },
   { href: "/corpo-docente/", label: "Corpo Docente" },
+  { href: "/sugestoes/", label: "Sugestões" },
   { href: "/fontes/", label: "Fontes" },
   { href: "/busca/", label: "Busca" },
 ];
@@ -24,5 +26,7 @@ export const quickLinks = [
   { href: "http://www.webgiz.unimontes.br/", label: "WebGiz" },
   { href: "https://www.gepad.unimontes.br/", label: "GEPAD" },
   { href: "/contatos/", label: "Coordenação GP" },
-  { href: "/campus/", label: "Mapa do campus" },
+  { href: "/mapa-grafico/", label: "Mapa gráfico do campus" },
+  { href: "/campus/", label: "Campus e contatos" },
+  { href: "/sugestoes/", label: "Sugerir melhoria" },
 ];

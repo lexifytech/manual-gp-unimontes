@@ -24,12 +24,12 @@ import {
 import { SurveyChartCard } from "./SurveyChartCard";
 
 const PIE_COLORS = [
-  "#006837",
-  "#c9a227",
-  "#008f4c",
-  "#004d28",
-  "#5c8a6f",
-  "#2d6a4f",
+  "#144aa8",
+  "#333a56",
+  "#2a62c4",
+  "#6b7280",
+  "#0c4da2",
+  "#9ca3af",
 ];
 
 const PIE_LABEL_MIN_PERCENT = 5;
@@ -161,13 +161,13 @@ function SurveyHorizontalBar({ data }: { data: SurveyHorizontalBarQuestion }) {
           <li key={opt.label}>
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1.5">
               <p className="text-xs text-uni-text leading-snug flex-1 min-w-0">{opt.label}</p>
-              <p className="text-xs font-semibold text-uni-green-dark tabular-nums shrink-0">
+              <p className="text-xs font-semibold text-uni-blue-dark tabular-nums shrink-0">
                 {opt.count ?? 0} · {formatSurveyPercent(opt.percent)}
               </p>
             </div>
             <div className="h-2.5 w-full rounded-full bg-uni-border overflow-hidden">
               <div
-                className="h-full rounded-full bg-uni-green transition-all"
+                className="h-full rounded-full bg-uni-blue transition-all"
                 style={{ width: `${Math.min(opt.percent, 100)}%` }}
                 role="meter"
                 aria-valuenow={opt.percent}
@@ -224,11 +224,11 @@ function SurveyLikert({ data }: { data: SurveyLikertQuestion }) {
                 fontSize: 12,
               }}
             />
-            <Bar dataKey="count" fill="#006837" radius={[4, 4, 0, 0]} maxBarSize={56}>
+            <Bar dataKey="count" fill="#144aa8" radius={[4, 4, 0, 0]} maxBarSize={56}>
               {chartData.map((entry) => (
                 <Cell
                   key={entry.label}
-                  fill={entry.count === 0 ? "#dde3df" : "#006837"}
+                  fill={entry.count === 0 ? "#d8d8d8" : "#144aa8"}
                 />
               ))}
               <LabelList dataKey="barLabel" position="top" fontSize={11} />

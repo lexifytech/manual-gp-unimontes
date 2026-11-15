@@ -16,7 +16,7 @@ export type Opportunity = {
 export function OpportunityCard({ opportunity }: { opportunity: Opportunity }) {
   return (
     <article className="rounded-xl border border-uni-border bg-white shadow-sm overflow-hidden">
-      <div className="bg-uni-green px-4 py-2 flex justify-between items-center gap-2">
+      <div className="bg-uni-blue px-4 py-2 flex justify-between items-center gap-2">
         <span className="text-white font-semibold">{opportunity.title}</span>
         <span className="text-xs bg-white/20 text-white rounded px-2 py-0.5">
           {opportunity.category}

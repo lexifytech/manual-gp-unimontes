@@ -16,14 +16,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 shadow-md">
-      <div className="bg-uni-green-dark text-white text-sm py-1.5 px-4 text-center">
+      <div className="bg-uni-blue-dark text-white text-sm py-1.5 px-4 text-center">
         Universidade Estadual de Montes Claros — Projeto acadêmico Gestão Pública
       </div>
-      <div className="bg-uni-green border-b-4 border-uni-gold">
+      <div className="bg-uni-blue border-b-4 border-uni-blue-dark">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 group">
             <span
-              className="flex h-11 w-11 items-center justify-center rounded bg-white text-uni-green font-bold text-lg"
+              className="flex h-11 w-11 items-center justify-center rounded bg-white text-uni-blue font-bold text-lg"
               aria-hidden
             >
               U
@@ -55,7 +55,7 @@ export function Header() {
         </div>
         <nav
           id="main-nav"
-          className={`${open ? "block" : "hidden"} md:block border-t border-white/15 bg-uni-green-dark`}
+          className={`${open ? "block" : "hidden"} md:block border-t border-white/15 bg-uni-blue-dark`}
         >
           <ul className="max-w-6xl mx-auto px-2 py-2 flex flex-col md:flex-row md:flex-wrap gap-0.5">
             {mainNav.map((item) => (
@@ -65,7 +65,7 @@ export function Header() {
                   onClick={() => setOpen(false)}
                   className={`block px-3 py-2 text-sm rounded transition-colors ${
                     isActive(item.href)
-                      ? "bg-white text-uni-green-dark font-semibold"
+                      ? "bg-white text-uni-blue-dark font-semibold"
                       : "text-white/95 hover:bg-white/15"
                   }`}
                 >

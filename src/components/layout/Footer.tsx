@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-uni-border bg-uni-green-dark text-white">
+    <footer className="mt-auto border-t border-uni-border bg-uni-blue-dark text-white">
       <div className="max-w-6xl mx-auto px-4 py-8 grid gap-6 md:grid-cols-2">
         <div>
           <p className="font-semibold text-lg mb-2">
@@ -24,6 +24,10 @@ export function Footer() {
             se inscrever.
           </p>
           <p className="mt-3">
+            <Link href="/sugestoes/" className="underline hover:text-white">
+              Sugerir melhoria
+            </Link>
+            {" · "}
             <Link href="/fontes/" className="underline hover:text-white">
               Ver fontes consultadas
             </Link>

@@ -62,6 +62,12 @@ function flatten(): SearchDocument[] {
       href: "/extensao/",
     },
     {
+      id: "mapa-grafico",
+      title: "Mapa gráfico campus isométrico",
+      body: "ilustração campus sede prédios PDF CCSA biblioteca RU",
+      href: "/mapa-grafico/",
+    },
+    {
       id: "campus",
       title: "Campus mapa prédios",
       body: campusPlaces.map((p) => `${p.name} ${p.building ?? ""}`).join(" "),
@@ -72,6 +78,12 @@ function flatten(): SearchDocument[] {
       title: "Contatos secretaria coordenação",
       body: "secretaria.gestaopublica Marly curso.gestaopublica 3229-8265",
       href: "/contatos/",
+    },
+    {
+      id: "sugestoes",
+      title: "Sugestões feedback melhoria manual",
+      body: "questionário sugestão erro lacuna navegação campus oportunidades",
+      href: "/sugestoes/",
     },
   ];
 

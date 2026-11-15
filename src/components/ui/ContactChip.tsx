@@ -11,7 +11,7 @@ export function ContactChip({
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-2 rounded-full border border-uni-border bg-white px-3 py-1.5 text-sm hover:border-uni-green hover:text-uni-green"
+      className="inline-flex items-center gap-2 rounded-full border border-uni-border bg-white px-3 py-1.5 text-sm hover:border-uni-blue hover:text-uni-blue"
     >
       <span className="text-uni-muted text-xs uppercase">{label ?? type}</span>
       <span className="font-medium">{value}</span>

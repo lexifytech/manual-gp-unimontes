@@ -15,7 +15,7 @@ export default function CaminhosPage() {
     >
       <div className="overflow-x-auto not-prose">
         <table className="w-full text-sm border border-uni-border">
-          <thead className="bg-uni-green text-white">
+          <thead className="bg-uni-blue text-white">
             <tr>
               <th className="p-3 text-left">Se você quer…</th>
               <th className="p-3 text-left">Comece por…</th>

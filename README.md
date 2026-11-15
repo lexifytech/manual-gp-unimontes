@@ -45,6 +45,10 @@ Arquivo `public/.nojekyll` evita que o Jekyll do Pages ignore a pasta `_next/`.
 - `public/research/` — gráficos da pesquisa com acadêmicos
 - `public/docs/ppc-gestao-publica-2022.pdf` — PPC
 
+## Sugestões (feedback)
+
+A página `/sugestoes/` envia respostas por [FormSubmit](https://formsubmit.co/) para o e-mail da coordenação (padrão: `curso.gestaopublica@unimontes.br`). No **primeiro envio**, a caixa precisa confirmar o link de ativação. Para outro destinatário no deploy, defina `NEXT_PUBLIC_FEEDBACK_EMAIL` nas variáveis do GitHub Actions.
+
 ## Aviso legal
 
 Este projeto acadêmico **não substitui** editais, regulamentos ou comunicados oficiais da Unimontes. Confirme informações mutáveis (horários, valores, bolsas) no portal antes de tomar decisões.

@@ -14,7 +14,7 @@ export function ExternalLink({
       href={resolved}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-uni-link underline font-medium hover:text-uni-green"
+      className="text-uni-link underline font-medium hover:text-uni-blue"
     >
       {children}
       <span className="sr-only"> (abre em nova aba)</span>
