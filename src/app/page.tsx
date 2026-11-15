@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 import { Card } from "@/components/ui/Card";
 import { ContactChip } from "@/components/ui/ContactChip";
 import { quickLinks } from "@/lib/navigation";
@@ -76,7 +77,7 @@ export default function HomePage() {
             (file) => (
               <figure key={file} className="rounded-lg border border-uni-border bg-white p-3">
                 <Image
-                  src={`/research/${file}`}
+                  src={withBasePath(`/research/${file}`)}
                   alt="Gráfico de pesquisa com acadêmicos sobre acesso à informação na universidade"
                   width={800}
                   height={500}

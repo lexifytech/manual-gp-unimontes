@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 import { PageShell } from "@/components/layout/PageShell";
 import { diagnosticoProjeto, researchImages } from "@/content/manualMeta";
 import { PAGE_SOURCES } from "@/content/pageSources";
@@ -30,7 +31,7 @@ export default function DiagnosticoPage() {
         {researchImages.map((file) => (
           <figure key={file} className="rounded-lg border border-uni-border bg-white p-3">
             <Image
-              src={`/research/${file}`}
+              src={withBasePath(`/research/${file}`)}
               alt="Gráfico ou resposta da pesquisa com acadêmicos de Gestão Pública"
               width={800}
               height={600}

@@ -28,7 +28,7 @@ export default function CampusPage() {
     >
       <figure className="not-prose mb-8 rounded-xl overflow-hidden border border-uni-border bg-white p-2">
         <Image
-          src="/maps/campus-isometric.jpeg"
+          src={withBasePath("/maps/campus-isometric.jpeg")}
           alt="Mapa isométrico do campus sede da Unimontes com identificação dos prédios"
           width={1200}
           height={900}
