@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { ContactChip } from "@/components/ui/ContactChip";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
+import { ExternalLink } from "@/components/ui/ExternalLink";
 import { campusPlaces } from "@/content/campus";
 import {
   bibliotecaContatoManualGP,
@@ -83,6 +84,12 @@ export default function CampusPage() {
       </div>
 
       <h2 id="biblioteca">Biblioteca: como começar</h2>
+      <p>
+        Além do acervo e dos serviços da Biblioteca Universitária, o{" "}
+        <ExternalLink href="https://meclivros.mec.gov.br/">MEC Livros</ExternalLink> oferece
+        acesso gratuito a livros digitais pelo Ministério da Educação — útil para consulta à
+        distância e para materiais das disciplinas.
+      </p>
       <ol>
         {bibliotecaPassos.map((step) => (
           <li key={step}>{step}</li>

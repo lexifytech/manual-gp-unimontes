@@ -24,6 +24,7 @@ const fontesManualOportunidades = [
   "Edital PEAES 05/2026",
   "Restaurante Universitário",
   "Biblioteca Universitária",
+  "MEC Livros — plataforma federal de livros digitais",
   "Centro de Ciências Humanas – estrutura e laboratórios listados",
   "Campus Universitário",
   "Mapa do Site",

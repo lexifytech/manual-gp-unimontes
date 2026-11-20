@@ -10,13 +10,13 @@ function flatten(): SearchDocument[] {
     {
       id: "home",
       title: "Manual acadêmico Gestão Pública",
-      body: "Unimontes oportunidades pesquisa extensão ensino campus coordenação editais WebGiz GEPAD PEAES",
+      body: "Unimontes oportunidades pesquisa extensão ensino campus coordenação editais WebGiz GEPAD PEAES MEC Livros livros digitais",
       href: "/",
     },
     {
       id: "sobre",
       title: "Sobre o manual como usar ouvidoria",
-      body: "apresentação limites levantamento conclusão redes sociais Disque 162",
+      body: "apresentação limites levantamento conclusão redes sociais Disque 162 VLibras Libras acessibilidade surdos",
       href: "/sobre/",
     },
     {
@@ -70,7 +70,7 @@ function flatten(): SearchDocument[] {
     {
       id: "campus",
       title: "Campus mapa prédios",
-      body: campusPlaces.map((p) => `${p.name} ${p.building ?? ""}`).join(" "),
+      body: `${campusPlaces.map((p) => `${p.name} ${p.building ?? ""}`).join(" ")} MEC Livros biblioteca livros digitais`,
       href: "/campus/",
     },
     {

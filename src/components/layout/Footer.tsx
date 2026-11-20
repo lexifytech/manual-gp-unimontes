@@ -32,6 +32,10 @@ export function Footer() {
               Ver fontes consultadas
             </Link>
             {" · "}
+            <Link href="/sobre/#acessibilidade-libras" className="underline hover:text-white">
+              Acessibilidade em Libras
+            </Link>
+            {" · "}
             <Link
               href="https://unimontes.br/editais/"
               target="_blank"
@@ -39,6 +43,17 @@ export function Footer() {
               className="underline hover:text-white"
             >
               Editais vigentes
+              <span className="sr-only"> (abre em nova aba)</span>
+            </Link>
+            {" · "}
+            <Link
+              href="https://meclivros.mec.gov.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white"
+            >
+              MEC Livros
+              <span className="sr-only"> (abre em nova aba)</span>
             </Link>
           </p>
         </div>

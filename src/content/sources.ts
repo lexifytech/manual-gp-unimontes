@@ -14,6 +14,7 @@ export const officialSources: OfficialSource[] = [
   { label: "PEAES", href: "https://peaes.unimontes.br/" },
   { label: "Restaurante Universitário", href: "https://unimontes.br/" },
   { label: "Biblioteca Universitária", href: "https://unimontes.br/" },
+  { label: "MEC Livros — plataforma federal de livros digitais", href: "https://meclivros.mec.gov.br/" },
   { label: "GEPAD", href: "https://www.gepad.unimontes.br/" },
   { label: "WebGiz", href: "http://www.webgiz.unimontes.br/" },
   { label: "CEAD — AVA", href: "https://www.cead.unimontes.br/ava/login/index.php" },

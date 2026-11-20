@@ -25,6 +25,7 @@ export const quickLinks = [
   { href: "https://unimontes.br/editais/", label: "Editais Unimontes" },
   { href: "http://www.webgiz.unimontes.br/", label: "WebGiz" },
   { href: "https://www.gepad.unimontes.br/", label: "GEPAD" },
+  { href: "https://meclivros.mec.gov.br/", label: "MEC Livros" },
   { href: "/contatos/", label: "Coordenação GP" },
   { href: "/mapa-grafico/", label: "Mapa gráfico do campus" },
   { href: "/campus/", label: "Campus e contatos" },

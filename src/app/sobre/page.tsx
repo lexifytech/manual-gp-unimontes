@@ -62,6 +62,16 @@ export default function SobrePage() {
         ))}
       </ol>
 
+      <h2 id="acessibilidade-libras">Acessibilidade em Libras</h2>
+      <p>
+        Este manual integra o{" "}
+        <ExternalLink href="https://www.vlibras.gov.br/">VLibras</ExternalLink>, ferramenta
+        federal que traduz conteúdos em português para Libras. Use o botão flutuante no canto
+        esquerdo da tela em qualquer página. O VLibras é um recurso complementar e{" "}
+        <strong>não substitui um intérprete de Libras</strong> em atendimentos presenciais,
+        aulas ou situações que exijam mediação humana.
+      </p>
+
       <h2>Ouvidoria e transparência</h2>
       <p>{ouvidoriaTexto}</p>
 

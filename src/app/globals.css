@@ -47,6 +47,14 @@ body {
   top: 1rem;
 }
 
+/* VLibras — botão flutuante acima do conteúdo; skip-link mantém z-index maior ao focar */
+[vw-access-button] {
+  z-index: 9998 !important;
+}
+[vw-plugin-wrapper] {
+  z-index: 9997 !important;
+}
+
 .prose-uni h2 {
   font-size: 1.375rem;
   font-weight: 700;

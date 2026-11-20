@@ -88,6 +88,7 @@ export const bibliotecaPassos = [
   "Abra o Guia do Usuário e confira cadastro, empréstimo, renovação, reserva, penalidades, acesso ao catálogo e serviços digitais.",
   "Leve documento de identificação e comprovante de vínculo acadêmico, se exigidos para cadastro.",
   "Pesquise livros e periódicos relacionados às disciplinas e peça orientação aos profissionais da biblioteca.",
+  "Para livros digitais gratuitos, acesse o MEC Livros (meclivros.mec.gov.br), em complemento ao acervo da biblioteca universitária.",
   "Confirme diretamente horários especiais, funcionamento em recessos e regras de acesso a salas ou equipamentos.",
 ];
 
