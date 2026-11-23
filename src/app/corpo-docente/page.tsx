@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { DataTable, Th } from "@/components/ui/DataTable";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { administrationFaculty, courseCoordination } from "@/content/faculty";
@@ -23,58 +24,62 @@ export default function CorpoDocentePage() {
       </AlertDisclaimer>
 
       <h2>Coordenação e gestão do curso</h2>
-      <FacultyTable members={courseCoordination} />
+      <FacultyTable caption="Coordenação e gestão do curso" members={courseCoordination} />
 
       <h2>Departamento de Ciências da Administração</h2>
       <p className="text-sm text-uni-muted mb-4">
         E-mails institucionais e Currículo Lattes conforme página do curso de Administração
         (Unimontes).
       </p>
-      <FacultyTable members={administrationFaculty} showBond />
+      <FacultyTable
+        caption="Docentes do Departamento de Ciências da Administração"
+        members={administrationFaculty}
+        showBond
+      />
     </PageShell>
   );
 }
 
 function FacultyTable({
+  caption,
   members,
   showBond,
 }: {
+  caption: string;
   members: typeof courseCoordination;
   showBond?: boolean;
 }) {
   return (
-    <div className="overflow-x-auto not-prose mb-8">
-      <table className="w-full text-sm border border-uni-border">
-        <thead className="bg-uni-bg">
-          <tr>
-            <th className="p-2 text-left">Nome</th>
-            {showBond && <th className="p-2 text-left">Vínculo</th>}
-            <th className="p-2 text-left">Papel / local</th>
-            <th className="p-2 text-left">Contato</th>
+    <DataTable caption={caption} className="w-full text-sm border border-uni-border mb-8">
+      <thead className="bg-uni-bg">
+        <tr>
+          <Th scope="col">Nome</Th>
+          {showBond && <Th scope="col">Vínculo</Th>}
+          <Th scope="col">Papel / local</Th>
+          <Th scope="col">Contato</Th>
+        </tr>
+      </thead>
+      <tbody>
+        {members.map((m) => (
+          <tr key={m.name} className="border-t border-uni-border">
+            <th scope="row" className="p-2 font-medium text-left">
+              {m.name}
+            </th>
+            {showBond && <td className="p-2">{m.bond ?? "—"}</td>}
+            <td className="p-2 text-uni-muted">
+              {[m.role, m.location, m.notes].filter(Boolean).join(" · ") || "—"}
+            </td>
+            <td className="p-2">
+              {m.email && (
+                <a href={`mailto:${m.email}`} className="text-uni-link underline block">
+                  {m.email}
+                </a>
+              )}
+              {m.lattes && <ExternalLink href={m.lattes}>Lattes</ExternalLink>}
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {members.map((m) => (
-            <tr key={m.name} className="border-t border-uni-border">
-              <td className="p-2 font-medium">{m.name}</td>
-              {showBond && <td className="p-2">{m.bond ?? "—"}</td>}
-              <td className="p-2 text-uni-muted">
-                {[m.role, m.location, m.notes].filter(Boolean).join(" · ") || "—"}
-              </td>
-              <td className="p-2">
-                {m.email && (
-                  <a href={`mailto:${m.email}`} className="text-uni-link underline block">
-                    {m.email}
-                  </a>
-                )}
-                {m.lattes && (
-                  <ExternalLink href={m.lattes}>Lattes</ExternalLink>
-                )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </DataTable>
   );
 }

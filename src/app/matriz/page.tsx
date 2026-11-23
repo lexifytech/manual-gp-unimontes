@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { DataTable, Th } from "@/components/ui/DataTable";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { curriculumPeriods, workloadSummary } from "@/content/curriculum";
@@ -27,40 +28,53 @@ export default function MatrizPage() {
       {curriculumPeriods.map((period) => (
         <section key={period.period}>
           <h2>{period.period}º período</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border border-uni-border mb-8">
-              <thead className="bg-uni-blue text-white">
-                <tr>
-                  <th className="p-2 text-left">Disciplina</th>
-                  <th className="p-2">T</th>
-                  <th className="p-2">P</th>
-                  <th className="p-2">AS</th>
-                  <th className="p-2">H/A</th>
+          <DataTable
+            caption={`Disciplinas do ${period.period}º período`}
+            className="w-full text-sm border border-uni-border mb-8"
+          >
+            <thead className="bg-uni-blue text-white">
+              <tr>
+                <Th scope="col">Disciplina</Th>
+                <Th scope="col" className="p-2 text-center">
+                  T
+                </Th>
+                <Th scope="col" className="p-2 text-center">
+                  P
+                </Th>
+                <Th scope="col" className="p-2 text-center">
+                  AS
+                </Th>
+                <Th scope="col" className="p-2 text-center">
+                  H/A
+                </Th>
+              </tr>
+            </thead>
+            <tbody>
+              {period.disciplines.map((d) => (
+                <tr key={d.name} className="border-t border-uni-border">
+                  <th scope="row" className="p-2 text-left font-normal">
+                    {d.name}
+                    {d.note && (
+                      <span className="block text-xs text-uni-muted font-normal">{d.note}</span>
+                    )}
+                  </th>
+                  <td className="p-2 text-center">{d.theoretical}</td>
+                  <td className="p-2 text-center">{d.practical}</td>
+                  <td className="p-2 text-center">{d.weeklyClasses}</td>
+                  <td className="p-2 text-center">{d.hours}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {period.disciplines.map((d) => (
-                  <tr key={d.name} className="border-t border-uni-border">
-                    <td className="p-2">
-                      {d.name}
-                      {d.note && (
-                        <span className="block text-xs text-uni-muted">{d.note}</span>
-                      )}
-                    </td>
-                    <td className="p-2 text-center">{d.theoretical}</td>
-                    <td className="p-2 text-center">{d.practical}</td>
-                    <td className="p-2 text-center">{d.weeklyClasses}</td>
-                    <td className="p-2 text-center">{d.hours}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </DataTable>
         </section>
       ))}
 
       <h2>Composição da carga horária total</h2>
-      <table className="w-full text-sm border border-uni-border max-w-md">
+      <DataTable
+        caption="Composição da carga horária total"
+        scrollable={false}
+        className="w-full text-sm border border-uni-border max-w-md"
+      >
         <tbody>
           {[
             ["Atividades teóricas", workloadSummary.theoretical],
@@ -70,12 +84,14 @@ export default function MatrizPage() {
             ["Total", workloadSummary.total],
           ].map(([k, v]) => (
             <tr key={String(k)} className="border-b border-uni-border">
-              <th className="text-left p-2 bg-uni-bg">{k}</th>
+              <th scope="row" className="text-left p-2 bg-uni-bg">
+                {k}
+              </th>
               <td className="p-2 font-medium">{v} h</td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </DataTable>
     </PageShell>
   );
 }

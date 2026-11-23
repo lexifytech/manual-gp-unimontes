@@ -9,6 +9,8 @@ import {
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
+const formErrorId = "feedback-form-error";
+
 export function FeedbackForm() {
   const [state, setState] = useState<SubmitState>("idle");
   const [errorDetail, setErrorDetail] = useState<string | null>(null);
@@ -88,6 +90,7 @@ export function FeedbackForm() {
       <div
         className="not-prose rounded-xl border border-uni-border bg-white p-6 shadow-sm"
         role="status"
+        aria-live="polite"
       >
         <p className="text-lg font-semibold text-uni-blue-dark">Obrigado pelo feedback!</p>
         <p className="mt-2 text-sm text-uni-muted leading-relaxed">
@@ -110,6 +113,8 @@ export function FeedbackForm() {
       onSubmit={handleSubmit}
       className="not-prose max-w-xl space-y-5 rounded-xl border border-uni-border bg-white p-6 shadow-sm"
       noValidate
+      aria-busy={state === "submitting"}
+      aria-describedby={state === "error" && errorDetail ? formErrorId : undefined}
     >
       <p className="text-sm text-uni-muted leading-relaxed">
         Respostas são anônimas por padrão. Use o e-mail apenas se quiser retorno da coordenação.
@@ -190,7 +195,7 @@ export function FeedbackForm() {
       </FormField>
 
       {state === "error" && errorDetail && (
-        <p className="text-sm text-red-700" role="alert">
+        <p id={formErrorId} className="text-sm text-red-700" role="alert" aria-live="assertive">
           {errorDetail}{" "}
           <a href={`mailto:${feedbackRecipientEmail}`} className="underline font-medium">
             {feedbackRecipientEmail}

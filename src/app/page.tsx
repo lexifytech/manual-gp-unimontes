@@ -9,15 +9,15 @@ import { quickLinks } from "@/lib/navigation";
 
 export default function HomePage() {
   return (
-    <main className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-4 py-10">
       <section className="rounded-2xl bg-uni-blue text-white p-8 md:p-10 shadow-lg mb-10">
-        <p className="text-white/80 font-semibold text-sm uppercase tracking-wide">
+        <p className="text-uni-on-blue-muted font-semibold text-sm uppercase tracking-wide">
           Tecnologia em Gestão Pública · UNIMONTES
         </p>
         <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
           Manual de orientação acadêmica
         </h1>
-        <p className="text-white/90 max-w-2xl text-lg leading-relaxed">
+        <p className="text-uni-on-blue max-w-2xl text-lg leading-relaxed">
           Caminhos práticos para pesquisa, ensino, extensão, serviços e vida no campus — com
           setores responsáveis, contatos e links oficiais. Conteúdo baseado no portal Unimontes,
           editais e páginas dos setores (referência nov/2026).
@@ -41,6 +41,7 @@ export default function HomePage() {
                 className="rounded-xl border border-uni-border bg-white p-4 hover:border-uni-blue text-uni-blue-dark font-semibold text-sm"
               >
                 {q.label} ↗
+                <span className="sr-only"> (abre em nova aba)</span>
               </a>
             ) : (
               <Link
@@ -100,6 +101,6 @@ export default function HomePage() {
           Sugerir melhoria
         </Link>
       </p>
-    </main>
+    </div>
   );
 }

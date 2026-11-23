@@ -18,9 +18,10 @@ export function PageShell({
   children,
 }: PageShellProps) {
   return (
-    <main className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      <article aria-labelledby="page-title">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-uni-blue-dark border-b-4 border-uni-blue pb-2">
+        <h1 id="page-title" className="text-3xl font-bold text-uni-blue-dark border-b-4 border-uni-blue pb-2">
           {title}
         </h1>
         {lead && <p className="mt-3 text-uni-muted text-lg max-w-3xl">{lead}</p>}
@@ -35,6 +36,7 @@ export function PageShell({
         )}
       </header>
       <div className="prose-uni">{children}</div>
-    </main>
+      </article>
+    </div>
   );
 }

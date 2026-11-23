@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-uni-border bg-uni-blue-dark text-white">
+    <footer id="rodape" tabIndex={-1} className="mt-auto border-t border-uni-border bg-uni-blue-dark text-white outline-none">
       <div className="max-w-6xl mx-auto px-4 py-8 grid gap-6 md:grid-cols-2">
         <div>
           <p className="font-semibold text-lg mb-2">
@@ -32,8 +32,12 @@ export function Footer() {
               Ver fontes consultadas
             </Link>
             {" · "}
-            <Link href="/sobre/#acessibilidade-libras" className="underline hover:text-white">
-              Acessibilidade em Libras
+            <Link href="/acessibilidade/" className="underline hover:text-white">
+              Acessibilidade
+            </Link>
+            {" · "}
+            <Link href="/mapa-do-site/" className="underline hover:text-white">
+              Mapa do site
             </Link>
             {" · "}
             <Link

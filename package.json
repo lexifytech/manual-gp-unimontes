@@ -8,6 +8,8 @@
     "build:pages": "GITHUB_PAGES=true npm run build",
     "start": "next start",
     "lint": "eslint",
+    "a11y": "npm run build && node scripts/a11y-static.mjs",
+    "a11y:chrome": "npm run build && npx axe out/index.html out/acessibilidade/index.html out/busca/index.html out/matriz/index.html out/diagnostico/index.html --tags wcag2a,wcag2aa,wcag21aa,best-practice",
     "ingest:preview": "node scripts/ingest-docs.mjs"
   },
   "dependencies": {
@@ -21,6 +23,7 @@
     "picomatch": "4.0.7"
   },
   "devDependencies": {
+    "@axe-core/cli": "^4.14.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -28,6 +31,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.29",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "jsdom": "^31.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

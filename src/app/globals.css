@@ -25,6 +25,8 @@
   --color-uni-muted: var(--uni-muted);
   --color-uni-border: var(--uni-border);
   --color-uni-link: var(--uni-link);
+  --color-uni-on-blue: var(--uni-on-blue);
+  --color-uni-on-blue-muted: var(--uni-on-blue-muted);
   --font-sans: var(--font-source-sans), system-ui, sans-serif;
 }
 
@@ -32,6 +34,37 @@ body {
   background: var(--uni-bg);
   color: var(--uni-text);
   font-family: var(--font-sans);
+}
+
+:root {
+  --uni-on-blue: #e8eef8;
+  --uni-on-blue-muted: #d4dceb;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--uni-blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-nav {
+  position: relative;
+  z-index: 1000;
 }
 
 .skip-link {
@@ -45,6 +78,88 @@ body {
 .skip-link:focus {
   left: 1rem;
   top: 1rem;
+}
+
+.accessibility-bar-link {
+  color: #fff333;
+  text-decoration: underline;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+.accessibility-bar-link:hover,
+.accessibility-bar-link:focus {
+  color: #ffffff;
+  outline: 2px solid #fff333;
+  outline-offset: 2px;
+}
+
+/* eMAG — primeira folha de alto contraste (fundo #000, texto #FFF, links #FFF333) */
+html.high-contrast {
+  --uni-blue: #000000;
+  --uni-blue-dark: #000000;
+  --uni-blue-light: #000000;
+  --uni-accent: #ffffff;
+  --uni-bg: #000000;
+  --uni-surface: #000000;
+  --uni-text: #ffffff;
+  --uni-muted: #ffffff;
+  --uni-border: #ffffff;
+  --uni-link: #fff333;
+}
+
+html.high-contrast body {
+  background: #000000;
+  color: #ffffff;
+}
+
+html.high-contrast a:not(.accessibility-bar-link):not(.skip-link) {
+  color: #fff333 !important;
+  text-decoration: underline !important;
+}
+
+html.high-contrast .accessibility-bar {
+  background: #000000;
+  border-color: #ffffff;
+}
+
+html.high-contrast .prose-uni h2,
+html.high-contrast .prose-uni h3 {
+  color: #ffffff;
+}
+
+html.high-contrast img {
+  outline: 1px solid #ffffff;
+}
+
+html.high-contrast input,
+html.high-contrast select,
+html.high-contrast textarea,
+html.high-contrast .form-control {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+html.high-contrast *:focus-visible {
+  outline: 3px solid #fff333 !important;
+  outline-offset: 2px;
+}
+
+html.high-contrast header,
+html.high-contrast footer,
+html.high-contrast [class*="bg-uni-blue"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+html.high-contrast [class*="text-white"] {
+  color: #ffffff !important;
 }
 
 /* VLibras — botão flutuante acima do conteúdo; skip-link mantém z-index maior ao focar */

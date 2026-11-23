@@ -62,14 +62,15 @@ export default function SobrePage() {
         ))}
       </ol>
 
-      <h2 id="acessibilidade-libras">Acessibilidade em Libras</h2>
+      <h2 id="acessibilidade-digital">Acessibilidade</h2>
       <p>
-        Este manual integra o{" "}
-        <ExternalLink href="https://www.vlibras.gov.br/">VLibras</ExternalLink>, ferramenta
-        federal que traduz conteúdos em português para Libras. Use o botão flutuante no canto
-        esquerdo da tela em qualquer página. O VLibras é um recurso complementar e{" "}
-        <strong>não substitui um intérprete de Libras</strong> em atendimentos presenciais,
-        aulas ou situações que exijam mediação humana.
+        Este manual adota recursos do eMAG e WCAG 2.1 AA: barra de acessibilidade, atalhos de
+        teclado, alto contraste, mapa do site, leitores de tela e VLibras. Detalhes, declaração de
+        conformidade e canal para reportar barreiras estão na{" "}
+        <Link href="/acessibilidade/" className="text-uni-link underline font-medium">
+          página de acessibilidade
+        </Link>
+        .
       </p>
 
       <h2>Ouvidoria e transparência</h2>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import MiniSearch from "minisearch";
 import { searchDocuments } from "@/content/searchIndex";
 
@@ -16,6 +16,13 @@ mini.addAll(searchDocuments);
 export function SearchClient() {
   const [q, setQ] = useState("");
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash !== "#acesso-busca") return;
+    const el = document.getElementById("acesso-busca");
+    el?.focus();
+  }, []);
+
   const results = useMemo(() => {
     if (!q.trim()) return [];
     return mini.search(q).slice(0, 20);
@@ -23,11 +30,11 @@ export function SearchClient() {
 
   return (
     <div className="not-prose max-w-xl">
-      <label htmlFor="site-search" className="sr-only">
+      <label htmlFor="acesso-busca" className="sr-only">
         Buscar no manual
       </label>
       <input
-        id="site-search"
+        id="acesso-busca"
         type="search"
         value={q}
         onChange={(e) => setQ(e.target.value)}

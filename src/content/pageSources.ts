@@ -18,4 +18,6 @@ export const PAGE_SOURCES = {
   diagnostico: "Enquete com acadêmicos do curso (2026); projeto de intervenção GP",
   fontes: "Links institucionais listados abaixo",
   sugestoes: "Projeto de intervenção GP; canal de feedback aos mantenedores do manual",
+  mapaDoSite: "Estrutura de navegação do manual acadêmico GP",
+  acessibilidade: "eMAG 3.1; WCAG 2.1 AA; recursos do manual",
 } as const;

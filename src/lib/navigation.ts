@@ -3,6 +3,7 @@ export type NavItem = { href: string; label: string };
 export const mainNav: NavItem[] = [
   { href: "/", label: "Início" },
   { href: "/sobre/", label: "Sobre o manual" },
+  { href: "/acessibilidade/", label: "Acessibilidade" },
   { href: "/curso/", label: "O Curso" },
   { href: "/diagnostico/", label: "Pesquisa" },
   { href: "/matriz/", label: "Matriz Curricular" },

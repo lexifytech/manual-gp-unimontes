@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { DataTable, Th } from "@/components/ui/DataTable";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
 import { ExternalLink } from "@/components/ui/ExternalLink";
 import { ContactChip } from "@/components/ui/ContactChip";
@@ -27,26 +28,31 @@ export default function VidaAcademicaPage() {
 
       <h2>AACC — 100 horas</h2>
       <p>Atividades acadêmico-científico-culturais comprovadas, exigência no 4º período.</p>
-      <div className="overflow-x-auto">
-        <table className="w-full text-xs md:text-sm border border-uni-border">
-          <thead className="bg-uni-bg">
-            <tr>
-              <th className="p-2">Cód.</th>
-              <th className="p-2 text-left">Atividade</th>
-              <th className="p-2 text-left">Limite</th>
+      <DataTable
+        caption="Atividades AACC — códigos, descrições e limites"
+        className="w-full text-xs md:text-sm border border-uni-border"
+      >
+        <thead className="bg-uni-bg">
+          <tr>
+            <Th scope="col" className="p-2 text-center">
+              Cód.
+            </Th>
+            <Th scope="col">Atividade</Th>
+            <Th scope="col">Limite</Th>
+          </tr>
+        </thead>
+        <tbody>
+          {aaccActivities.map((a) => (
+            <tr key={a.code} className="border-t border-uni-border">
+              <td className="p-2 text-center">{a.code}</td>
+              <th scope="row" className="p-2 text-left font-normal">
+                {a.activity}
+              </th>
+              <td className="p-2">{a.limit}</td>
             </tr>
-          </thead>
-          <tbody>
-            {aaccActivities.map((a) => (
-              <tr key={a.code} className="border-t border-uni-border">
-                <td className="p-2">{a.code}</td>
-                <td className="p-2">{a.activity}</td>
-                <td className="p-2">{a.limit}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </DataTable>
       <p className="text-sm text-uni-muted mt-2">
         Descrições incompletas nesta página devem ser conferidas no PPC integral.
       </p>

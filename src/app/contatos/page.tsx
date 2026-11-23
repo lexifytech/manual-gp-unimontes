@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { DataTable, Th } from "@/components/ui/DataTable";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
 import { ContactChip } from "@/components/ui/ContactChip";
 import { ExternalLink } from "@/components/ui/ExternalLink";
@@ -23,26 +24,26 @@ export default function ContatosPage() {
       mutable
     >
       <h2>Unidades e contatos institucionais</h2>
-      <div className="overflow-x-auto not-prose mb-6">
-        <table className="w-full text-sm border border-uni-border">
-          <thead className="bg-uni-bg">
-            <tr>
-              <th className="p-2 text-left">Unidade</th>
-              <th className="p-2 text-left">Informação publicada</th>
-              <th className="p-2 text-left">Como utilizar</th>
+      <DataTable caption="Unidades e contatos institucionais" className="w-full text-sm border border-uni-border mb-6">
+        <thead className="bg-uni-bg">
+          <tr>
+            <Th scope="col">Unidade</Th>
+            <Th scope="col">Informação publicada</Th>
+            <Th scope="col">Como utilizar</Th>
+          </tr>
+        </thead>
+        <tbody>
+          {contactUnits.map((row) => (
+            <tr key={row.unit} className="border-t border-uni-border">
+              <th scope="row" className="p-2 font-medium text-left">
+                {row.unit}
+              </th>
+              <td className="p-2">{row.info}</td>
+              <td className="p-2 text-uni-muted">{row.use}</td>
             </tr>
-          </thead>
-          <tbody>
-            {contactUnits.map((row) => (
-              <tr key={row.unit} className="border-t border-uni-border">
-                <td className="p-2 font-medium">{row.unit}</td>
-                <td className="p-2">{row.info}</td>
-                <td className="p-2 text-uni-muted">{row.use}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </DataTable>
 
       <h2>Gestão Pública — registro acadêmico</h2>
       <ul>

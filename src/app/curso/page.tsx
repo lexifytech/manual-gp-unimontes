@@ -1,4 +1,5 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { DataTable, Th } from "@/components/ui/DataTable";
 import { AlertDisclaimer } from "@/components/ui/AlertDisclaimer";
 import { ContactChip } from "@/components/ui/ContactChip";
 import { ExternalLink } from "@/components/ui/ExternalLink";
@@ -44,7 +45,11 @@ export default function CursoPage() {
       </AlertDisclaimer>
 
       <h2>Características gerais</h2>
-      <table className="w-full text-sm border border-uni-border my-4">
+      <DataTable
+        caption="Características gerais do curso"
+        scrollable={false}
+        className="w-full text-sm border border-uni-border my-4"
+      >
         <tbody>
           {[
             ["Duração", "4 semestres"],
@@ -56,34 +61,36 @@ export default function CursoPage() {
             ["AIEX", "195 h ao longo dos 4 semestres"],
           ].map(([k, v]) => (
             <tr key={k} className="border-b border-uni-border">
-              <th className="text-left p-2 bg-uni-bg font-semibold w-1/3">{k}</th>
+              <th scope="row" className="text-left p-2 bg-uni-bg font-semibold w-1/3">
+                {k}
+              </th>
               <td className="p-2">{v}</td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </DataTable>
 
       <h2>Onde fica e a quem procurar</h2>
-      <div className="overflow-x-auto not-prose mb-6">
-        <table className="w-full text-sm border border-uni-border">
-          <thead className="bg-uni-bg">
-            <tr>
-              <th className="p-2 text-left">Unidade</th>
-              <th className="p-2 text-left">Informação publicada</th>
-              <th className="p-2 text-left">Como utilizar</th>
+      <DataTable caption="Onde fica e a quem procurar" className="w-full text-sm border border-uni-border mb-6">
+        <thead className="bg-uni-bg">
+          <tr>
+            <Th scope="col">Unidade</Th>
+            <Th scope="col">Informação publicada</Th>
+            <Th scope="col">Como utilizar</Th>
+          </tr>
+        </thead>
+        <tbody>
+          {contactUnits.map((row) => (
+            <tr key={row.unit} className="border-t border-uni-border">
+              <th scope="row" className="p-2 font-medium text-left">
+                {row.unit}
+              </th>
+              <td className="p-2">{row.info}</td>
+              <td className="p-2 text-uni-muted">{row.use}</td>
             </tr>
-          </thead>
-          <tbody>
-            {contactUnits.map((row) => (
-              <tr key={row.unit} className="border-t border-uni-border">
-                <td className="p-2 font-medium">{row.unit}</td>
-                <td className="p-2">{row.info}</td>
-                <td className="p-2 text-uni-muted">{row.use}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </DataTable>
 
       <h2>No portal da Unimontes</h2>
       <ol>

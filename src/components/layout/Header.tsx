@@ -16,7 +16,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 shadow-md">
-      <div className="bg-uni-blue-dark text-white text-sm py-1.5 px-4 text-center">
+      <div className="bg-uni-blue-dark text-uni-on-blue text-sm py-1.5 px-4 text-center">
         Universidade Estadual de Montes Claros — Projeto acadêmico Gestão Pública
       </div>
       <div className="bg-uni-blue border-b-4 border-uni-blue-dark">
@@ -32,16 +32,17 @@ export function Header() {
               <span className="block font-bold text-lg group-hover:underline">
                 Manual Gestão Pública
               </span>
-              <span className="text-white/85 text-xs">Unimontes · Campus Sede</span>
+              <span className="text-uni-on-blue-muted text-xs">Unimontes · Campus Sede</span>
             </div>
           </Link>
           <Link
             href="https://unimontes.br/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline text-sm text-white/90 hover:text-white underline"
+            className="hidden sm:inline text-sm text-uni-on-blue hover:text-white underline"
           >
             Portal unimontes.br
+            <span className="sr-only"> (abre em nova aba)</span>
           </Link>
           <button
             type="button"
@@ -49,13 +50,16 @@ export function Header() {
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             aria-controls="main-nav"
+            aria-label={open ? "Fechar menu principal" : "Abrir menu principal"}
           >
             Menu
           </button>
         </div>
         <nav
           id="main-nav"
-          className={`${open ? "block" : "hidden"} md:block border-t border-white/15 bg-uni-blue-dark`}
+          aria-label="Menu principal"
+          tabIndex={-1}
+          className={`${open ? "block" : "hidden"} md:block border-t border-white/15 bg-uni-blue-dark outline-none`}
         >
           <ul className="max-w-6xl mx-auto px-2 py-2 flex flex-col md:flex-row md:flex-wrap gap-0.5">
             {mainNav.map((item) => (

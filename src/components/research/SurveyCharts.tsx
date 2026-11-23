@@ -22,6 +22,7 @@ import {
   type SurveyQuestion,
 } from "@/content/researchSurveyData";
 import { SurveyChartCard } from "./SurveyChartCard";
+import { SurveyDataTable } from "./SurveyDataTable";
 
 const PIE_COLORS = [
   "#144aa8",
@@ -107,9 +108,12 @@ function SurveyPie({ data }: { data: SurveyPieQuestion }) {
     }));
 
   return (
-    <SurveyChartCard question={data.question}>
+    <SurveyChartCard question={data.question} questionId={data.id}>
       <div className="grid md:grid-cols-[minmax(0,11rem)_1fr] gap-4 items-center flex-1">
-        <div className="h-[11.5rem] w-full min-w-[10.5rem] mx-auto md:mx-0">
+        <div
+          className="h-[11.5rem] w-full min-w-[10.5rem] mx-auto md:mx-0"
+          aria-hidden="true"
+        >
           <ResponsiveContainer width="100%" height="100%">
             <PieChart
               accessibilityLayer
@@ -147,6 +151,14 @@ function SurveyPie({ data }: { data: SurveyPieQuestion }) {
         </div>
         <PieLegend options={data.options} />
       </div>
+      <SurveyDataTable
+        caption="Dados em tabela (equivalente ao gráfico)"
+        rows={data.options.map((o) => ({
+          label: o.label,
+          percent: o.percent,
+          count: o.count,
+        }))}
+      />
     </SurveyChartCard>
   );
 }
@@ -155,7 +167,7 @@ function SurveyHorizontalBar({ data }: { data: SurveyHorizontalBarQuestion }) {
   const rows = [...data.options].sort((a, b) => (b.percent ?? 0) - (a.percent ?? 0));
 
   return (
-    <SurveyChartCard question={data.question} note={data.multiSelectNote}>
+    <SurveyChartCard question={data.question} questionId={data.id} note={data.multiSelectNote}>
       <ul className="space-y-4" aria-label={data.question}>
         {rows.map((opt) => (
           <li key={opt.label}>
@@ -173,7 +185,7 @@ function SurveyHorizontalBar({ data }: { data: SurveyHorizontalBarQuestion }) {
                 aria-valuenow={opt.percent}
                 aria-valuemin={0}
                 aria-valuemax={100}
-                aria-label={`${opt.percent}%`}
+                aria-label={`${opt.label}: ${opt.percent}%`}
               />
             </div>
           </li>
@@ -194,9 +206,10 @@ function SurveyLikert({ data }: { data: SurveyLikertQuestion }) {
   return (
     <SurveyChartCard
       question={data.question}
+      questionId={data.id}
       note="Escala de 1 (menor dificuldade) a 5 (maior dificuldade)"
     >
-      <div className="h-[240px] w-full">
+      <div className="h-[240px] w-full" aria-hidden="true">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
@@ -236,13 +249,25 @@ function SurveyLikert({ data }: { data: SurveyLikertQuestion }) {
           </BarChart>
         </ResponsiveContainer>
       </div>
+      <SurveyDataTable
+        caption="Dados em tabela (equivalente ao gráfico)"
+        rows={data.options.map((o) => ({
+          label: o.label,
+          percent: o.percent,
+          count: o.count,
+        }))}
+      />
     </SurveyChartCard>
   );
 }
 
 function SurveyOpenResponses({ data }: { data: SurveyOpenQuestion }) {
   return (
-    <SurveyChartCard question={data.question} note="Respostas abertas (texto literal)">
+    <SurveyChartCard
+      question={data.question}
+      questionId={data.id}
+      note="Respostas abertas (texto literal)"
+    >
       <ul className="max-h-72 overflow-y-auto space-y-2 pr-1 text-sm text-uni-text">
         {data.responses.map((text, idx) => (
           <li

@@ -16,7 +16,7 @@ function flatten(): SearchDocument[] {
     {
       id: "sobre",
       title: "Sobre o manual como usar ouvidoria",
-      body: "apresentação limites levantamento conclusão redes sociais Disque 162 VLibras Libras acessibilidade surdos",
+      body: "apresentação limites levantamento conclusão redes sociais Disque 162 VLibras Libras acessibilidade surdos eMAG alto contraste NVDA leitor de tela atalhos teclado",
       href: "/sobre/",
     },
     {
@@ -78,6 +78,18 @@ function flatten(): SearchDocument[] {
       title: "Contatos secretaria coordenação",
       body: "secretaria.gestaopublica Marly curso.gestaopublica 3229-8265",
       href: "/contatos/",
+    },
+    {
+      id: "acessibilidade",
+      title: "Acessibilidade digital eMAG WCAG atalhos contraste",
+      body: "leitor de tela NVDA VoiceOver VLibras alto contraste barreira conformidade",
+      href: "/acessibilidade/",
+    },
+    {
+      id: "mapa-do-site",
+      title: "Mapa do site navegação páginas",
+      body: "lista páginas manual menu início sobre busca campus contatos acessibilidade",
+      href: "/mapa-do-site/",
     },
     {
       id: "sugestoes",

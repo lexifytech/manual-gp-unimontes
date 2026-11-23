@@ -21,7 +21,7 @@ export function Card({
           {icon}
         </span>
       )}
-      <h2 className="font-bold text-uni-blue-dark text-lg">{title}</h2>
+      <h3 className="font-bold text-uni-blue-dark text-lg">{title}</h3>
       <p className="text-sm text-uni-muted mt-1 leading-relaxed">{description}</p>
     </Link>
   );

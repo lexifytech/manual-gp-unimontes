@@ -18,9 +18,9 @@ function pickQuestions(includeIds?: readonly string[]): SurveyQuestion[] {
 export function ResearchSurveySection({ includeIds }: ResearchSurveySectionProps) {
   const questions = pickQuestions(includeIds);
   return (
-    <div className="not-prose">
+    <section className="not-prose" aria-label="Resultados da pesquisa com acadêmicos">
       <SurveyCharts questions={questions} />
-    </div>
+    </section>
   );
 }
 
